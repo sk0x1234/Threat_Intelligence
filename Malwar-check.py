@@ -2,8 +2,9 @@
 
 import sys
 import hashlib
+import subprocess
 
-if sys.argc <1 :
+if len(sys.argv) <1 :
   print("Usage Malware-check  <FILEPATH>")
   sys.exit(1)
 
@@ -17,4 +18,11 @@ with open(file, 'rb') as f: # Open the file to read it's bytes
         f_hash.update(fb) # Update the hash
         fb = f.read(BLOCK_SIZE) # Read the next block from the file
 
-print (f_hash.hexdigest()) # Get the hexadecimal digest of the hash
+hash = f_hash.hexdigest() # Get the hexadecimal digest of the hash
+
+
+#format 
+#whois -h hash.cymru.com 2d23ca7b0b1d8869c8031ee0f03a2e19
+output = subprocess.check_output(["whois", "-h", "hash.cymru" ,hash ] )
+
+print(output)
