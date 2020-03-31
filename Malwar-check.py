@@ -23,6 +23,4 @@ hash = f_hash.hexdigest() # Get the hexadecimal digest of the hash
 
 #format 
 #whois -h hash.cymru.com 2d23ca7b0b1d8869c8031ee0f03a2e19
-output = subprocess.check_output(["whois", "-h", "hash.cymru" ,hash ] )
-
-print(output)
+output = subprocess.Popen(["whois", "-h", "hash.cymru" ,hash ] )
