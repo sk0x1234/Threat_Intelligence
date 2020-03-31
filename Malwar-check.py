@@ -24,3 +24,12 @@ hash = f_hash.hexdigest() # Get the hexadecimal digest of the hash
 #format 
 #whois -h hash.cymru.com 2d23ca7b0b1d8869c8031ee0f03a2e19
 output = subprocess.Popen(["whois", "-h", "hash.cymru" ,hash ] )
+
+
+# Bulk mode; hash.cymru.com [2009-11-12 19:39:50 +0000]   
+# Tobecode()
+#BEGIN
+#<list1>
+#....
+#....
+#END
